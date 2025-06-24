@@ -1,0 +1,38 @@
+digraph {
+	graph [nodesep=0.7 rankdir=LR ranksep=0.5 splines=curved]
+	Input [label="Input Layer
+(13,1)" fillcolor=lightblue fontsize=14 shape=box style="filled,rounded"]
+	C1 [label="Conv1D
+(32, ELU)" fillcolor=lightgray fontsize=14 shape=box style="filled,rounded"]
+	P1 [label=MaxPooling1D fillcolor=gray90 fontsize=14 shape=box style="filled,rounded"]
+	C2 [label="Conv1D
+(64, ELU)" fillcolor=lightgray fontsize=14 shape=box style="filled,rounded"]
+	P2 [label=MaxPooling1D fillcolor=gray90 fontsize=14 shape=box style="filled,rounded"]
+	Flatten [label=Flatten fillcolor=lightgray fontsize=14 shape=box style="filled,rounded"]
+	D1 [label="Dense
+(128, ELU)" fillcolor=lightgreen fontsize=14 shape=box style="filled,rounded"]
+	D2 [label="Dense
+(128, ELU)" fillcolor=lightgreen fontsize=14 shape=box style="filled,rounded"]
+	D3 [label="Dense
+(128, ELU)" fillcolor=lightgreen fontsize=14 shape=box style="filled,rounded"]
+	D4 [label="Dense
+(128, ELU)" fillcolor=lightgreen fontsize=14 shape=box style="filled,rounded"]
+	D5 [label="Dense (64, ELU)" fillcolor=lightyellow fontsize=14 shape=box style="filled,rounded"]
+	D6 [label="Dense (64, ELU)" fillcolor=lightyellow fontsize=14 shape=box style="filled,rounded"]
+	D7 [label="Dense (64, ELU)" fillcolor=lightyellow fontsize=14 shape=box style="filled,rounded"]
+	Output [label="Output
+Dense (1, Sigmoid)" fillcolor=lightcoral fontsize=14 shape=box style="filled,rounded"]
+	Input -> C1
+	C1 -> P1
+	P1 -> C2
+	C2 -> P2
+	P2 -> Flatten
+	Flatten -> D1
+	D1 -> D2
+	D2 -> D3
+	D3 -> D4
+	D4 -> D5
+	D5 -> D6
+	D6 -> D7
+	D7 -> Output
+}
